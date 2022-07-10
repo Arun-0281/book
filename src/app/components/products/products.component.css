@@ -1,0 +1,11 @@
+.cart-top{
+    display:flex;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: cornsilk;
+    position: relative;
+    flex-direction: column;
+    border:1px solid black;
+    border-radius: .25rem;
+}
+

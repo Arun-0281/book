@@ -1,0 +1,78 @@
+<div class="bootstrap-wrapper">
+  <div class="container">
+    <div class="row mt20">
+
+      <div class="col-md-6 offset-md-3">
+        <mat-card>
+        <div class="container">
+          <img src="" alt="">
+        </div>
+        <h1 class="text-center">Register Here !!</h1>
+         
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstname"  matInput placeholder="Enter Here">
+            
+          </mat-form-field>
+          <div *ngIf="firstname.invalid && (firstname.touched || firstname.dirty)" >
+
+            <span class="error" *ngIf="firstname.errors?.required">*First name is required.</span>
+            <span class="error" *ngIf="firstname.errors?.pattern">*Enter characters only.</span>
+
+          </div>
+          <br>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastname"  matInput placeholder="Enter Here">
+          </mat-form-field>
+
+          <div *ngIf="lastname.invalid && (lastname.touched || lastname.dirty)" >
+
+            <span class="error" *ngIf="lastname.errors?.required">*Last name is required.</span>
+            <span class="error" *ngIf="lastname.errors?.pattern">*Enter characters only.</span>
+
+          </div>
+          <br>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email"  type="email" matInput placeholder="Enter Here">
+          </mat-form-field>
+          <div *ngIf="email.invalid && (email.touched || email.dirty)" >
+
+            <span class="error" *ngIf="email.errors?.required">*Email is required.</span>
+            <span class="error" *ngIf="email.errors?.email">*Enter Valid Email.</span>
+
+          </div>
+          <br>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password"  type="password" matInput placeholder="Enter Here">
+          </mat-form-field>
+
+          <div *ngIf="password.invalid && (password.touched || password.dirty)" >
+
+            <span class="error" *ngIf="password.errors?.required">*password is required.</span>
+
+          </div>
+          <br>
+
+          <div class="container text-center">
+            <button type="submit" mat-raised-button color="primary" >Register</button>
+            <button style="margin-left: 20px;" mat-raised-button color="accent" >Clear</button>
+          </div>
+
+        </form>
+      </mat-card>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+  
